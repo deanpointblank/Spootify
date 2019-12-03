@@ -22,6 +22,19 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+
+##################### ADDED GEMS #####################
+# Debugging
+gem 'pry'
+
+# Secure Login
+gem 'devise'
+
+# Error during app init. I guess I'm adding in yarn?
+gem 'yarn'
+######################################################
+
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
