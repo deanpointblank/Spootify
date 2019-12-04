@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   
-  resources :episodes, only: [:new, :create, :show, :edit, :update, :destroy]
+  resources :shows do
+    resources :episodes, except: [:index, :update, :destroy]
+  end
+
+  resources :episodes, only: [:update, :destroy]
   
-  resources :shows, only: [:new, :create, :index, :show, :edit, :update, :destroy]
   
   resources :podcasts, only: [:index]
   
