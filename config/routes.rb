@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   ############ User-Routes ################
   
 
-  devise_for :users, :controllers => {registrations: 'registrations'}
+  devise_for :users, :controllers => {registrations: 'registrations', ominauth_callbacks: "omniauth_callbacks"}
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   ########## AdminSpecific-Rotues ##########
