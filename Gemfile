@@ -29,6 +29,9 @@ gem 'pry'
 
 # Secure Login
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google'
 
 # Error during app init. I guess I'm adding in yarn?
 gem 'yarn'
