@@ -82,6 +82,10 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    dotenv (2.7.5)
+    dotenv-rails (2.7.5)
+      dotenv (= 2.7.5)
+      railties (>= 3.2, < 6.1)
     erubi (1.9.0)
     faraday (0.17.1)
       multipart-post (>= 1.2, < 3)
@@ -117,7 +121,6 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.5)
       mini_portile2 (~> 2.4.0)
-    oauth (0.5.4)
     oauth2 (1.4.2)
       faraday (>= 0.8, < 2.0)
       jwt (>= 1.0, < 3.0)
@@ -129,13 +132,6 @@ GEM
       rack (>= 1.6.2, < 3)
     omniauth-facebook (5.0.0)
       omniauth-oauth2 (~> 1.2)
-    omniauth-google (1.0.2)
-      multi_json
-      omniauth (~> 1.0)
-      omniauth-oauth
-    omniauth-oauth (1.1.0)
-      oauth
-      omniauth (~> 1.0)
     omniauth-oauth2 (1.6.0)
       oauth2 (~> 1.1)
       omniauth (~> 1.9)
@@ -256,11 +252,11 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise
+  dotenv-rails
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
   omniauth
   omniauth-facebook
-  omniauth-google
   pry
   puma (~> 3.11)
   rails (~> 6.0.0)
