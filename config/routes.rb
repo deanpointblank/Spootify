@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
+  ########### Library-Routes ##############
+
   resources :libraries, only: [:index]
 
-  #########################################
+  ########### Podcast-Routes ##############
 
   resources :podcasts, only: [:index]
   
@@ -12,7 +14,7 @@ Rails.application.routes.draw do
 
   resources :episodes, only: [:update, :destroy]
   
-  ##########################################
+  ############ Music-Routes ##############
 
   resources :musics, only: [:index]
 
@@ -23,11 +25,17 @@ Rails.application.routes.draw do
   resources :songs, only: [:update, :destroy]
 
 
-  ###########################################
+  ############ User-Routes ################
   
 
   devise_for :users, :controllers => {registrations: 'registrations'}
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  ########## AdminSpecific-Rotues ##########
+
+
+
+  ##########################################
 
   root to: 'application#welcome'
 end
