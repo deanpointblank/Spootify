@@ -10,39 +10,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_04_025825) do
+ActiveRecord::Schema.define(version: 2019_12_04_045927) do
 
   create_table "albums", force: :cascade do |t|
+    t.integer "music_id"
+    t.string "title"
+    t.integer "release_year"
+    t.string "album_art"
+    t.string "label"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "episodes", force: :cascade do |t|
+    t.string "title"
+    t.string "content"
+    t.text "description"
+    t.integer "length"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "libraries", force: :cascade do |t|
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "musics", force: :cascade do |t|
+    t.integer "library_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "podcasts", force: :cascade do |t|
+    t.integer "library_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "shows", force: :cascade do |t|
+    t.integer "podcast_id"
+    t.string "title"
+    t.string "author"
+    t.string "cover"
+    t.text "abstract"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "songs", force: :cascade do |t|
+    t.integer "album_id"
+    t.string "title"
+    t.string "content"
+    t.integer "length"
+    t.text "lyrics"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -55,6 +77,7 @@ ActiveRecord::Schema.define(version: 2019_12_04_025825) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
