@@ -35,6 +35,9 @@ gem 'dotenv-rails'
 
 # Error during app init. I guess I'm adding in yarn?
 gem 'yarn'
+
+# Thin not loaded in app, kill me now please
+gem 'thin'
 ######################################################
 
 
