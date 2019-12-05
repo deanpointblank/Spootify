@@ -31,6 +31,16 @@
     <%= f.date_select :birthday, autocomplete: "birthday" %>
   </div>
 
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.radio_button :gender, 'male' %>
+    <%= f.label :gender_male, "Male" %>
+    <%= f.radio_button :gender, 'female' %>
+    <%= f.label :gender_female, "Female" %>
+    <%= f.radio_button :gender, 'non_binary' %>
+    <%= f.label :gender_non_binary, "Non-Binary" %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
