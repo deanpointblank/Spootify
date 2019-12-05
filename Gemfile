@@ -31,6 +31,7 @@ gem 'pry'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-github'
 gem 'dotenv-rails'
 
 # Error during app init. I guess I'm adding in yarn?
