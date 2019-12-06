@@ -18,7 +18,7 @@ Playlists
 <%= link_to "get the app", "#" %>
 
 <% if !!current_user %>
-    <%= link_to "#{current_user.username}", '#' %>
+    <%= link_to "#{current_user.username}", user_path(current_user) %>
 <%end%>
 
 </nav>
