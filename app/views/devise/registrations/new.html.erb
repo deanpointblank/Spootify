@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= f.label :birthday %><br />
-    <%= f.date_select :birthday, autocomplete: "birthday" %>
+    <%= f.date_select :birthday, start_year: Date.today.year - 90, end_year: Date.today.year, autocomplete: "birthday" %>
   </div>
 
   <div class="field">
