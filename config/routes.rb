@@ -58,7 +58,7 @@ Rails.application.routes.draw do
 
   ########## ArtistSpecific-Rotues ##########
 
-  scope '/artists', module: 'artist' do
+  namespace :artists do
     resources :libraries, only: [:show]
     resources :albums do
       resources :songs
@@ -67,7 +67,7 @@ Rails.application.routes.draw do
 
   ########## ArtistSpecific-Rotues ##########
 
-  scope '/authors', module: 'authors' do
+  namespace :authors do
     resources :libraries, only: [:show]
     resources :shows do
       resources :episodes
