@@ -1,4 +1,7 @@
-class Artists::LibrariesController < ApplicationController
+class Artists::LibrariesController < LibrariesController
+
     def show
+        
     end
+
 end

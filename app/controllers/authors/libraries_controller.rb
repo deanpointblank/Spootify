@@ -1,4 +1,6 @@
-class Authors::LibrariesController < ApplicationController
+class Authors::LibrariesController < LibrariesController
+
     def show
     end
+
 end
