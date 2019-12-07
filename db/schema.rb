@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_07_061142) do
+ActiveRecord::Schema.define(version: 2019_12_07_080158) do
 
   create_table "albums", force: :cascade do |t|
     t.integer "music_id"
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 2019_12_07_061142) do
     t.string "username"
     t.boolean "artist", default: false
     t.boolean "author", default: false
+    t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
