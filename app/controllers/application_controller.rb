@@ -6,11 +6,11 @@ class ApplicationController < ActionController::Base
             current_user.library.build_music
             current_user.library.build_podcast
             current_user.save
-            redirect_to user_home_path(current_user)
+            redirect_to user_libraries_path(current_user)
         end
 
         if !!current_user
-            redirect_to user_home_path(current_user)
+            redirect_to user_libraries_path(current_user)
         end
     end
     
