@@ -41,7 +41,7 @@ Rails.application.routes.draw do
     end
   
   ########### Library-Routes ##############
-  resources :libraries, only: [:index] do
+  resources :libraries, only: [:index, :show] do
     resources :musics, only: [:index]
     resources :podcasts, only: [:index]
 

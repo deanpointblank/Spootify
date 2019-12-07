@@ -1,13 +1,13 @@
 class LibrariesController < ApplicationController
-    before_action :authenticate_user
+    before_action :authenticate_user!
 
     def index
         @all_albums = Album.all
         @all_podcast = Show.all
     end
 
-    def home
-        @recently_played = current_user.recent
+    def show
+        # @recently_played = current_user.recent
         # new user suggestions
         # similar to recent artists
         # custom made playlists
@@ -19,7 +19,7 @@ class LibrariesController < ApplicationController
 
     def made_for_you
         # user recomendations
-        
+
     end
 
     def liked_songs
