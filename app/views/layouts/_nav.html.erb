@@ -19,12 +19,10 @@ Playlists
 
 <%= link_to "get the app", "#" %>
 
-<% if !!current_user %>
-    <%= link_to "#{current_user.username}", user_path(current_user) %>
-<% elsif !!current_user && current_user.artist %>
+<% if !!current_user && current_user.artist %>
     <ul>
-        <li><%= link_to "upload music", new_aritst_albums_path %> </li>
-        <li><%= link_to "view your music", artist_albums_path %> </li>
+        <li><%= link_to "upload music", new_artists_album_path() %> </li>
+        <li><%= link_to "view your music", artists_albums_path %> </li>
         <li><%= link_to "check your stats", '#' %> </li>
     </ul>
 <% elsif !!current_user && current_user.author %>
@@ -37,6 +35,8 @@ Playlists
     <ul>
         <li><%= link_to "Administrator Panel", '#' %> </li>
     </ul>
+<% elsif !!current_user %>
+    <%= link_to "#{current_user.username}", user_path(current_user) %>
 <% end %>
 
 </nav>
