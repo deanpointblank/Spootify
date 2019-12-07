@@ -18,25 +18,28 @@ Playlists
 </ul>
 
 <%= link_to "get the app", "#" %>
-
-<% if !!current_user && current_user.artist %>
     <ul>
+<% if !!current_user && current_user.artist %>
         <li><%= link_to "upload music", new_artists_album_path() %> </li>
         <li><%= link_to "view your music", artists_albums_path %> </li>
         <li><%= link_to "check your stats", '#' %> </li>
-    </ul>
-<% elsif !!current_user && current_user.author %>
-    <ul>
+
+<% end %>
+<% if !!current_user && current_user.author %>
+
         <li><%= link_to "upload Podcast", new_authors_show_path %> </li>
         <li><%= link_to "view your shows", authors_shows_path %> </li>
         <li><%= link_to "check your stats", '#' %> </li>
-    </ul>
-<% elsif !!current_user && current_user.author %>
-    <ul>
-        <li><%= link_to "Administrator Panel", '#' %> </li>
-    </ul>
-<% elsif !!current_user %>
-    <%= link_to "#{current_user.username}", user_path(current_user) %>
+
 <% end %>
+<% if !!current_user && current_user.admin %>
+
+        <li><%= link_to "Administrator Panel", '#' %> </li>
+
+<% end %>
+<% if !!current_user %>
+        <li><%= link_to "#{current_user.username}", user_path(current_user) %></li>
+<% end %>
+</ul>
 
 </nav>
