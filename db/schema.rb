@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_07_050430) do
+ActiveRecord::Schema.define(version: 2019_12_07_061142) do
 
   create_table "albums", force: :cascade do |t|
     t.integer "music_id"
@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(version: 2019_12_07_050430) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "artist_id"
+  end
+
+  create_table "create_music_albums", force: :cascade do |t|
+    t.integer "music_id"
+    t.integer "album_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "episodes", force: :cascade do |t|
@@ -44,6 +51,13 @@ ActiveRecord::Schema.define(version: 2019_12_07_050430) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "podcast_shows", force: :cascade do |t|
+    t.integer "podcast_id"
+    t.integer "show_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "podcasts", force: :cascade do |t|
     t.integer "library_id"
     t.datetime "created_at", precision: 6, null: false
@@ -58,6 +72,7 @@ ActiveRecord::Schema.define(version: 2019_12_07_050430) do
     t.text "abstract"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "author_id"
   end
 
   create_table "songs", force: :cascade do |t|
