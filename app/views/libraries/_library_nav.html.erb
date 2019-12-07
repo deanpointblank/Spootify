@@ -1,0 +1,10 @@
+<nav>
+<% if !!current_user %>
+    <%= link_to "Playlists", new_user_registration_path %>
+    <%= link_to "Made For You", new_user_session_path %>
+    <%= link_to "Liked Songs", new_user_session_path %>
+    <%= link_to "Albums", new_user_session_path %>
+    <%= link_to "Artists", new_user_session_path %>
+    <%= link_to "Podcasts", new_user_session_path %>
+<% end %>
+</nav>
