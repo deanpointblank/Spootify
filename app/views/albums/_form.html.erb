@@ -1,26 +1,30 @@
 <%= form_for(album) do |f| %>
+    
     <h4>album</h4>
-<%= f.label :title %><br/>
-<%= f.text_field :title %><br/ ><br/>
+    <%= f.label :title %><br/>
+    <%= f.text_field :title %><br/ ><br/>
 
-<%= f.label :release_year %><br/>
-<%= f.number_field  :release_year%><br/ ><br/>
+    <%= f.label :release_year %><br/>
+    <%= f.number_field  :release_year%><br/ ><br/>
 
-<%= f.label :album_art %><br/>
-<%= f.text_field  :album_art%><br/ ><br/>
+    <%= f.label :album_art %><br/>
+    <%= f.text_field  :album_art%><br/ ><br/>
 
-<%= f.label :label %><br/>
-<%= f.text_field :label %><br/ ><br/>
+    <%= f.label :label %><br/>
+    <%= f.text_field :label %><br/ ><br/>
 
-<%= f.hidden_field :artist_id %><br/ >
-    <h4>songs</h4>
-    <%= f.fields_for :songs do |song|%>
-        <%= render 'albums/song', f: song %>
-    <% end %>
+    <%= f.hidden_field :artist_id %><br/ >
+        <h4>songs</h4>
+        <div class="songs">
+            <%= f.fields_for :songs do |song|%>
+                <%= render 'song_fields', f: song %>
+            <% end %>
+        </div>
 
 
 
 
-
-<%= f.submit %>
+    <%# <%= link_to_add_association 'Add Song', f, :songs, data: {association_insertion_mode: '.songs', association_insertion_method: :append } %><br/>
+    <%= f.submit %><br/>
+    
 <% end %>

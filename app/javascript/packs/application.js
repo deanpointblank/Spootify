@@ -16,4 +16,12 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+//= require jquery
+//= require jquery_ujs
+//= require foundation
+$(document).foundation();
+//= require_tree .
 //= require cocoon
+//= require global
+//= require jquery-ui
+//= require turbolinks

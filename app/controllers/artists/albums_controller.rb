@@ -6,7 +6,7 @@ class Artists::AlbumsController < ApplicationController
 
     def new
         @album = Album.new
-        @album.songs.build
+        16.times { @album.songs.build }
     end
 
     def create
