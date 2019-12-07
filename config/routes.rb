@@ -65,7 +65,7 @@ Rails.application.routes.draw do
     end
   end
 
-  ########## ArtistSpecific-Rotues ##########
+  ########## AuthorSpecific-Rotues ##########
 
   namespace :authors do
     resources :libraries, only: [:show]

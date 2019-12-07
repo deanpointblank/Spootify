@@ -21,6 +21,22 @@ Playlists
 
 <% if !!current_user %>
     <%= link_to "#{current_user.username}", user_path(current_user) %>
-<%end%>
+<% elsif !!current_user && current_user.artist %>
+    <ul>
+        <li><%= link_to "upload music", new_aritst_albums_path %> </li>
+        <li><%= link_to "view your music", artist_albums_path %> </li>
+        <li><%= link_to "check your stats", '#' %> </li>
+    </ul>
+<% elsif !!current_user && current_user.author %>
+    <ul>
+        <li><%= link_to "upload Podcast", new_authors_show_path %> </li>
+        <li><%= link_to "view your shows", authors_shows_path %> </li>
+        <li><%= link_to "check your stats", '#' %> </li>
+    </ul>
+<% elsif !!current_user && current_user.author %>
+    <ul>
+        <li><%= link_to "Administrator Panel", '#' %> </li>
+    </ul>
+<% end %>
 
 </nav>

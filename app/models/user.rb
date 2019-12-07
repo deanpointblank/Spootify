@@ -35,5 +35,13 @@ class User < ApplicationRecord
     end
   end
 
+  def make_artist
+  end
+
+  def make_author
+  end
+
+  def make_admin
+  end
         
 end
