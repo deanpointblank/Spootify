@@ -35,13 +35,25 @@ class User < ApplicationRecord
     end
   end
 
-  def make_artist
+  def self.make_artist
+    if !self.artist
+      self.artist = true
+      self.save 
+    end
   end
 
-  def make_author
+  def self.make_author
+    if !self.author
+      self.author = true
+      self.save 
+    end
   end
 
-  def make_admin
+  def self.make_admin
+    if !self.admin
+      self.admin = true
+      self.save 
+    end
   end
         
 end

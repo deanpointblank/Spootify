@@ -55,6 +55,7 @@ Rails.application.routes.draw do
   # scope '/admin', module: 'admin' do
   #   resources :stats, only: [index]
   # end
+  get 'admin/new', to: 'users#new_admin'
 
   ########## ArtistSpecific-Rotues ##########
 
@@ -65,6 +66,9 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'artist/new', to: 'users#new_artist'
+
+
   ########## AuthorSpecific-Rotues ##########
 
   namespace :authors do
@@ -73,6 +77,8 @@ Rails.application.routes.draw do
       resources :episodes
     end
   end
+
+  get 'author/new', to: 'users#new_author'
 
 
   ##########################################
