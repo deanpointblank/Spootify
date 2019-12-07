@@ -2,26 +2,28 @@ Rails.application.routes.draw do
 
   ########### Podcast-Routes ##############
 
-  resources :podcasts, only: [:index] do
-    resources :shows
+  resources :podcasts, only: [:show] do
+    resources :shows, only: [:show, :index]
   end
   
-  resources :shows do
-    resources :episodes, except: [:index, :update, :destroy]
+  resources :shows, only: [:show, :index] do
+    resources :episodes, only: [:show, :index]
   end
 
+  resources :shows, only: [:update, :destroy]
   resources :episodes, only: [:update, :destroy]
   
   ############ Music-Routes ##############
 
-  resources :musics, only: [:index] do
+  resources :musics, only: [:show] do
     resources :albums
   end
 
-  resources :albums, except: [:index] do
+  resources :albums, only: [:show, :index] do
     resources :songs, only: [:new, :create, :edit]
   end
 
+  resources :albums, only: [:update, :destroy]
   resources :songs, only: [:update, :destroy]
 
 
@@ -31,7 +33,7 @@ Rails.application.routes.draw do
     devise_for :users, :controllers => {registrations: 'registrations', omniauth_callbacks: "users/omniauth_callbacks"}
     resources :users, only: [:show, :index] do
       ########### User-Library-Routes ##############
-      resources :libraries, only: [:index]
+      resources :libraries, only: [:show]
       get :home, to: 'libraries#home'
       get :playlists, to: 'libraries#playlists'
       get :made_for_you, to: 'libraries#made_for_you'
@@ -50,8 +52,27 @@ Rails.application.routes.draw do
 
   ########## AdminSpecific-Rotues ##########
 
+  # scope '/admin', module: 'admin' do
+  #   resources :stats, only: [index]
+  # end
 
+  ########## ArtistSpecific-Rotues ##########
 
+  scope '/artists', module: 'artist' do
+    resources :libraries, only: [:show]
+    resources :albums do
+      resources :songs
+    end
+  end
+
+  ########## ArtistSpecific-Rotues ##########
+
+  scope '/authors', module: 'authors' do
+    resources :libraries, only: [:show]
+    resources :shows do
+      resources :episodes
+    end
+  end
 
 
   ##########################################
