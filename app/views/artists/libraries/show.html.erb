@@ -1,9 +1,6 @@
 <% if !current_user.artist %>
     <div>
-        <p>aspiring artist? click here</p>
-        <%= form_for(current_user, url: new_artist_path) do |f| %>
-            <%= f.submit "Become an artist" %>
-        <% end %>
+        <p>aspiring artist? <%= link_to "click here", artist_new_path %></p>
     </div>
     <!-- turns gives current user atrist:true-->
 <% else %>

@@ -2,13 +2,19 @@ class UsersController < ApplicationController
 
 
 
-    def artist_new
+    def new_artist
+        current_user.make_artist
+        redirect_to artists_library_path(current_user.library)
     end
 
-    def author_new
+    def new_author
+        current_user.make_author
+        redirect_to authors_library_path(current_user.library)
     end
 
-    def admin_new
+    def new_admin
+        current_user.make_admin
+        redirect_to root_path
     end
-    
+
 end
