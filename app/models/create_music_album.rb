@@ -1,0 +1,2 @@
+class CreateMusicAlbum < ApplicationRecord
+end
