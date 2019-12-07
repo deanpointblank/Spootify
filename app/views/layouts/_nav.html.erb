@@ -8,7 +8,11 @@
 <nav class="sidenav">
 <%= link_to "Home", root_path %>
 <%= link_to "Search", '#' %>
-<%= link_to "Your Library", user_libraries_path %>
+<% if !!current_user %>
+    <%= link_to "Your Library", user_libraries_path %>
+<% else %>
+    <%= link_to "Your Library", new_user_registration_path %>
+<% end %>
 <ul>
 Playlists
 </ul>
