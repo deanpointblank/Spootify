@@ -39,6 +39,9 @@ gem 'yarn'
 
 # Thin not loaded in app, kill me now please
 gem 'thin'
+
+# dynamic forms
+gem 'cocoon'
 ######################################################
 
 

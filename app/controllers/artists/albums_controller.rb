@@ -6,6 +6,7 @@ class Artists::AlbumsController < ApplicationController
 
     def new
         @album = Album.new
+        @album.songs.build
     end
 
     def create
@@ -18,6 +19,7 @@ class Artists::AlbumsController < ApplicationController
 
     def edit
         @album = Album.find_by(id: params[:id])
+        @album.songs.build
     end
 
     def update
@@ -36,6 +38,6 @@ class Artists::AlbumsController < ApplicationController
     private 
 
     def album_params
-        params.require(:album).permit(:title, :release_year, :album_art, :label, :artist_id, song_attributes: )
+        params.require(:album).permit(:title, :release_year, :album_art, :label, :artist_id, song_attributes: [:album_id, :title, :content, :length, :lyrics])
 
 end
