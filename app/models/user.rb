@@ -6,6 +6,8 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[facebook]
 
   has_one :library
+  has_many :albums_made, foreign_key: "artist_id", class_name: "Album"
+  #has_many :songs, through: :albums_made, source:
   
   def self.new_with_session(params, session)
     super.tap do |user|
