@@ -11,6 +11,7 @@ class AlbumsController < ApplicationController
     def create
         @album = Album.new(album_params)
         @album.artist = current_user
+        binding.pry
         if @album.save
             binding.pry
             redirect_to artists_albums
