@@ -40,8 +40,12 @@ gem 'yarn'
 # Thin not loaded in app, kill me now please
 gem 'thin'
 
-# dynamic forms
-gem 'cocoon'
+# style and holyshit jquery was never installed
+gem 'bootstrap', '~> 4.4.1'
+gem 'jquery-rails'
+
+  # dynamic forms
+  gem 'cocoon'
 ######################################################
 
 
