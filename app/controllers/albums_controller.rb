@@ -24,7 +24,7 @@ class AlbumsController < ApplicationController
 
     def edit
         @album = Album.find_by(id: params[:id])
-        @album.songs.build
+        3.times { @album.songs.build }
     end
 
     def update
@@ -33,7 +33,7 @@ class AlbumsController < ApplicationController
         @album.update(album_params)
 
         if @album.save
-            redirect_to @album
+            redirect_to artists_albums
         else
             render 'edit'
         end
