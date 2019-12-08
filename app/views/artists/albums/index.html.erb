@@ -1,5 +1,10 @@
 <% @albums.each do |album|%>
     <div>
-        <p><%= album.title %></p>
-    <div>
+        <img src="<%=album.album_art %>" class="cover" height='100'>
+        <h4><%= album.title %></h4>
+        <h4><%= album.artist.username %></h4>
+        <% if current_user == album.artist %>
+        <p><%= link_to "Edit #{album.title}",edit_artists_album_path(album) %></p>
+        <% end %>
+    </div>
 <% end %>
