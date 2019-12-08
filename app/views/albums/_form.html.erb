@@ -14,15 +14,17 @@
     <%= f.text_field :label %><br/ ><br/>
 
     <%= f.hidden_field :artist_id %><br/ >
-        <h4>songs</h4>
         <% if !!album.artist && album.songs.present? && current_user == album.artist%>
+        <p><%= button_to 'Delete Album',  album,  method: :delete %><p>
             <% album.songs.each do |song| %>
             <div>
                 <h4><%= link_to "edit #{song.title}", edit_artists_album_song_path(album, current_user,song) %></h4>
                 <p><%= song.content %></p>
+                <p><%= button_to 'Delete Song',  song,  method: :delete %><p>
             <div><br/>
             <% end %>
         <% end %>
+        <h4>songs</h4>
         <div class="songs">
             <%= f.fields_for :songs do |song|%>
                 <%= render 'song_fields', f: song %>

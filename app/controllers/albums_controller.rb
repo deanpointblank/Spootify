@@ -5,7 +5,7 @@ class AlbumsController < ApplicationController
 
     def new
         @album = Album.new
-        16.times { @album.songs.build }
+        8.times { @album.songs.build }
     end
 
     def create
@@ -14,7 +14,7 @@ class AlbumsController < ApplicationController
         binding.pry
         if @album.save
             binding.pry
-            redirect_to artists_albums
+            redirect_to artists_albums_path
         else
             render 'new'
         end
@@ -35,11 +35,18 @@ class AlbumsController < ApplicationController
         @album.update(album_params)
 
         if @album.save
-            redirect_to artists_albums
+            redirect_to artists_albums_path
         else
             render 'edit'
         end
 
+    end
+
+    def destroy
+        @album = Album.find_by(id: params[:id])
+        @album.destroy
+
+        redirect_to artists_albums_path(current_user)
     end
 
     private 
