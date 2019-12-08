@@ -23,8 +23,8 @@ Rails.application.routes.draw do
     resources :songs, only: [:new, :create, :edit]
   end
 
-  resources :albums, only: [:update, :destroy]
-  resources :songs, only: [:update, :destroy]
+  resources :albums, only: [:create, :update, :destroy]
+  resources :songs, only: [:create, :update, :destroy]
 
 
   ############ User-Routes ################
