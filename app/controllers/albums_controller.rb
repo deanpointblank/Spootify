@@ -12,6 +12,7 @@ class AlbumsController < ApplicationController
         @album = Album.new(album_params)
         @album.artist = current_user
         if @album.save
+            binding.pry
             redirect_to artists_albums
         else
             render 'new'

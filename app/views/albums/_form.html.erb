@@ -15,10 +15,10 @@
 
     <%= f.hidden_field :artist_id %><br/ >
         <h4>songs</h4>
-        <% if !!album.artist && current_user == album.artist%>
+        <% if !!album.artist && album.songs.present? && current_user == album.artist%>
             <% album.songs.each do |song| %>
             <div>
-                <h4><%= link_to "edit #{song.title}", edit_artists_album_song_path(album, song) %></h4>
+                <h4><%= link_to "edit #{song.title}", edit_artists_album_song_path(album, current_user,song) %></h4>
                 <p><%= song.content %></p>
             <div><br/>
             <% end %>
