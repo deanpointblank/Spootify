@@ -11,13 +11,12 @@ class AlbumsController < ApplicationController
     def create
         @album = Album.new(album_params)
         @album.artist = current_user
-        binding.pry
         params[:album][:songs_attributes].each do |tracklist, song|
-            @album.songs.build(song)
+            new_song = Song.new(title: song["title"], content: song["title"], lyrics: song["lyrics"])
+            new_song.album =  @album
+            new_song.save
         end
-        binding.pry
         if @album.save
-            binding.pry
             redirect_to artists_albums_path
         else
             render 'new'
@@ -56,7 +55,6 @@ class AlbumsController < ApplicationController
     private 
 
     def album_params
-        binding.pry
-        params.require(:album).permit(:title, :release_year, :album_art, :label, :artist_id, :song_attributes [:album_id, :title, :content, :length, :lyrics])
+        params.require(:album).permit(:title, :release_year, :album_art, :label, :artist_id, song_attributes: [:album_id, :title, :content, :length, :lyrics])
     end
 end
