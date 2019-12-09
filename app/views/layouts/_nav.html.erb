@@ -5,45 +5,47 @@
 <% end %>
 </nav>
 
-<nav class="vertical-nav bg-dark" id="sidebar">
-    <ul class="nav flex-column bg-dark mb-0">
-     <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link" %></li>
-     <li class="nav-item"><%= link_to "Search", '#', class: "nav-link" %></li>
-    <% if !!current_user %>
-         <li class="nav-item"><%= link_to "Your Library", user_library_path(current_user, current_user.library), class: "nav-link" %></li>
-    <% else %>
-         <li class="nav-item"><%= link_to "Your Library", new_user_registration_path, class: "nav-link" %></li>
-    <% end %>
-    
-    <%= link_to "Playlists", '#', class: "nav-link"%>
+<nav>
+        <nav class="sidebar">
+            <ul class="nav nav-sidebar">
+            <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link" %></li>
+            <li class="nav-item"><%= link_to "Search", '#', class: "nav-link" %></li>
+            <% if !!current_user %>
+                <li class="nav-item"><%= link_to "Your Library", user_library_path(current_user, current_user.library), class: "nav-link" %></li>
+            <% else %>
+                <li class="nav-item"><%= link_to "Your Library", new_user_registration_path, class: "nav-link" %></li>
+            <% end %>
+            
+            <%= link_to "Playlists", '#', class: "nav-link"%>
 
 
-    <%= link_to "get the app", "#", class: "nav-link"%>
-    <% if !!current_user && current_user.artist %>
-             <li class="nav-item"><%= link_to "upload music", new_artists_album_path(), class: "nav-link" %> </li>
-             <li class="nav-item"><%= link_to "view your music", artists_albums_path, class: "nav-link" %> </li>
-             <li class="nav-item"><%= link_to "check your stats", '#', class: "nav-link" %> </li>
+            <%= link_to "get the app", "#", class: "nav-link"%>
+            <% if !!current_user && current_user.artist %>
+                    <li class="nav-item"><%= link_to "upload music", new_artists_album_path(), class: "nav-link" %> </li>
+                    <li class="nav-item"><%= link_to "view your music", artists_albums_path, class: "nav-link" %> </li>
+                    <li class="nav-item"><%= link_to "check your stats", '#', class: "nav-link" %> </li>
 
-    <% end %>
-    <% if !!current_user && current_user.author %>
+            <% end %>
+            <% if !!current_user && current_user.author %>
 
-             <li class="nav-item"><%= link_to "upload Podcast", new_authors_show_path, class: "nav-link" %> </li>
-             <li class="nav-item"><%= link_to "view your shows", authors_shows_path, class: "nav-link" %> </li>
-             <li class="nav-item"><%= link_to "check your stats", '#', class: "nav-link" %> </li>
+                    <li class="nav-item"><%= link_to "upload Podcast", new_authors_show_path, class: "nav-link" %> </li>
+                    <li class="nav-item"><%= link_to "view your shows", authors_shows_path, class: "nav-link" %> </li>
+                    <li class="nav-item"><%= link_to "check your stats", '#', class: "nav-link" %> </li>
 
-    <% end %>
-    <% if !!current_user && current_user.admin %>
+            <% end %>
+            <% if !!current_user && current_user.admin %>
 
-             <li class="nav-item"><%= link_to "Administrator Panel", '#', class: "nav-link" %> </li>
+                    <li class="nav-item"><%= link_to "Administrator Panel", '#', class: "nav-link" %> </li>
 
-    <% end %>
-    </ul>
-    <% if !!current_user %>
-            <div class="py-4 px-3 mb-4 ">
-            <h4 class="m-0"><%= link_to "#{current_user.username}", user_path(current_user), class: "nav-link" %></h4>
-                <div class="media d-flex align-items-center"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556074849/avatar-1_tcnd60.png" alt="..." width="65" class="mr-3 rounded-circle">
+            <% end %>
+            </ul>
+        <% if !!current_user %>
+                <div class="py-4 px-3 mb-4 ">
+                <h4 class="m-0"><%= link_to "#{current_user.username}", user_path(current_user), class: "nav-link" %></h4>
+                    <div class="media d-flex align-items-center"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556074849/avatar-1_tcnd60.png" alt="..." width="65" class="mr-3 rounded-circle">
+                    </div>
                 </div>
-            </div>
-    <% end %>
+        <% end %>
+        </div>
 
 </nav>
