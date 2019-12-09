@@ -12,6 +12,10 @@ class User < ApplicationRecord
 
   has_many :shows_made, -> { where author: true }, foreign_key: "author_id", class_name: "Show"
   has_many :episodes, -> {where author: true }, through: :shows_made
+
+  has_many :followers
+  has_many :artists, through: :followers
+  has_many :authors, through: :followers
   
   
   def self.new_with_session(params, session)

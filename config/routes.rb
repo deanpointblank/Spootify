@@ -39,6 +39,9 @@ Rails.application.routes.draw do
       get :made_for_you, to: 'libraries#made_for_you'
       get :liked_songs, to: 'libraries#liked_songs'
     end
+
+    ###############  Followers-Routes
+    resources :followers, only: [:create, :destroy]
   
   ########### Library-Routes ##############
   resources :libraries, only: [:index, :show] do
