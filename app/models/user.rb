@@ -7,11 +7,11 @@ class User < ApplicationRecord
 
   has_one :library
 
-  has_many :albums_made, -> { where artist: true }, foreign_key: "artist_id", class_name: "Album"
-  has_many :songs, -> {where artist: true}, through: :albums_made
+  has_many :albums_made, foreign_key: "artist_id", class_name: "Album"
+  has_many :songs, through: :albums_made
 
-  has_many :shows_made, -> { where author: true }, foreign_key: "author_id", class_name: "Show"
-  has_many :episodes, -> {where author: true }, through: :shows_made
+  has_many :shows_made, foreign_key: "author_id", class_name: "Show"
+  has_many :episodes, through: :shows_made
 
   has_many :followers
   has_many :artists, through: :followers

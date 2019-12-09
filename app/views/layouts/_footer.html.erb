@@ -5,8 +5,13 @@
         <li><%= link_to "For the Record", '#'  %></li>
     </ul>
     <ul>
-        <li><%= link_to "For Artists", artists_library_path(current_user) %></li>
-        <li><%= link_to "For Authors", authors_library_path(current_user) %></li>
+        <% if !!current_user%>
+            <li><%= link_to "For Artists", artists_library_path(current_user) %></li>
+            <li><%= link_to "For Authors", authors_library_path(current_user) %></li>
+        <% else %>
+            <li><%= link_to "For Artists", '#' %></li>
+            <li><%= link_to "For Authors", '#' %></li>
+        <% end %>
         <li><%= link_to "Developers", '#' %></li>
     </ul>
 </footer>
