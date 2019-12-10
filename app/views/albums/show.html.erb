@@ -1,0 +1,22 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <img src="<%= @album.album_art %>"alt="<%= @album.title %>" style= "height: 20em ">
+            </div>
+            <div class="col-md-7">
+                <h1 class="display-4"><%= @album.artist.username %></h1>
+                <p>Released: <%= @album.release_year %></p>
+                <p>label: <%= @album.label %></p>
+                <p><%= @album.songs.count %> tracks</p>
+                <button type="button" class="btn btn-primary btn-lg">Follow</button>
+                <button type="button" class="btn btn-secondary btn-lg">Unfollow</button>
+            </div>
+        </div>
+    </div>
+</div
+<ul class="list-group list-group-flush">
+    <% @album.songs.each do |song| %>
+        <li class="list-group-item"><%= song.title%></li>
+    <% end %>
+</ul>

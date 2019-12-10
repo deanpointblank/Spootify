@@ -1,7 +1,19 @@
 <div>
-<h3><%= current_user.username %></h3><br/>
-<%= link_to "View Account", edit_user_registration_path(current_user) %><br/>
-<%= link_to "Full Website", '#' %><br/>
-<%= link_to "Help", '#' %><br/>
-<%= link_to "Log Out", destroy_user_session_path, :method => :delete %>
+    <% if @user == current_user%>
+        <h3><%= current_user.username %></h3><br/>
+        <%= link_to "View Account", edit_user_registration_path(current_user) %><br/>
+        <%= link_to "Full Website", '#' %><br/>
+        <%= link_to "Help", '#' %><br/>
+        <%= link_to "Log Out", destroy_user_session_path, :method => :delete %>
+    <% end %>
+    <h3><%= @user.username %></h3><br/>
+    <% @user.albums_made.each do |album| %>
+        <div class="card">
+            <img src="<%= album.album_art %>" class="card-img-top" alt="<%= album.title %>">
+            <div class="card-body">
+                <h5 class="card-title"><%=  link_to "#{album.title}", album %></h5>
+                <p class="card-text"><%= link_to "#{@user.username}", album.artist %></p>
+            </div>
+        </div>
+    <% end %>
 </div>

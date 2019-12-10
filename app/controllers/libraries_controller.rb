@@ -2,11 +2,12 @@ class LibrariesController < ApplicationController
     before_action :authenticate_user!
 
     def index
-        @all_albums = Album.all
-        @all_podcast = Show.all
+
     end
 
     def show
+        @all_albums = Album.all
+        @all_podcast = Show.all
         # @recently_played = current_user.recent
         # new user suggestions
         # similar to recent artists
