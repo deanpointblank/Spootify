@@ -12,17 +12,20 @@ class AlbumsController < ApplicationController
         @album = Album.new(album_params)
         @album.artist = current_user
         params[:album][:songs_attributes].each do |tracklist, song|
-            new_song = Song.new(title: song["title"], content: song["title"], lyrics: song["lyrics"])
-            new_song.album =  @album
-            if new_song.valid?
-                new_song.save
+            @new_song = Song.new(title: song["title"], content: song["title"], lyrics: song["lyrics"])
+            @new_song.album =  @album
+            if @new_song.valid?
+                @new_song.save
+            else
+                flash[:song_errors] = @new_song.errors.full_messages
             end
         end
         if @album.valid?
             @album.save
             redirect_to artists_albums_path
         else
-            render 'new'
+            flash[:album_errors] = @album.errors.full_messages
+            render "/artists/albums/new"
         end
     end
 

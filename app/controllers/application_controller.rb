@@ -8,10 +8,6 @@ class ApplicationController < ActionController::Base
             current_user.save
             redirect_to user_home_path(current_user)
         end
-
-        if !!current_user
-            redirect_to user_home_path(current_user)
-        end
     end
     
 end

@@ -1,3 +1,17 @@
+<% if !!flash[:album_errors] %>
+    <% flash[:album_errors].each do |e| %>
+        <div class="alert alert-warning" role="alert">
+            Album: <%= e %>
+        </div>
+    <% end %>
+<% end %>
+<% if !!flash[:song_errors] %>
+    <% flash[:song_errors].each do |e| %>
+        <div class="alert alert-secondary" role="alert">
+            Song: <%= e %>
+        </div>
+    <% end %>
+<% end %>
 <div class="row py-9">
     <%= render "albums/form", album: @album %>
 </div>
