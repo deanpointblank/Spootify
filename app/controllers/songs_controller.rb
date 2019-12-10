@@ -23,6 +23,9 @@ class SongsController < ApplicationController
 
     def edit
         @song = Song.find_by(id: params[:id])
+        if !@song.artists.include?(current_user)
+            redirect_to root_path
+        end
     end
 
     def update
