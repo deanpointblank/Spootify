@@ -30,11 +30,11 @@ class SongsController < ApplicationController
 
     def update
         @song = Song.find_by(id: params[:id])
-        @song.update(song_params)
-
-        if @song.save
-            redirect_to artists_album(song.album)
+        
+        if @song.update(song_params)
+            redirect_to artists_album_song_path(@song.album)
         else
+            flash[:song_errors] = @song.errors.full_messages
             render 'edit'
         end
     end

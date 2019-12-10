@@ -6,6 +6,7 @@
             </div>
             <div class="col-md-7">
                 <h1 class="display-4"><%= @song.title %></h1>
+                <h3><%= link_to "#{@song.album.title}", album_path(@song.album)%></h3>
                 <p><%= @song.album.artist.username %></p>
                 <p>Released: <%= @song.album.release_year %></p>
                 <p>label: <%= @song.album.label %></p>

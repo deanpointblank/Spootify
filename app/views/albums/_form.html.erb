@@ -17,11 +17,12 @@
         <% if !!album.artist && album.songs.present? && current_user == album.artist%>
         <p><%= button_to 'Delete Album',  album,  method: :delete %><p>
             <% album.songs.each do |song| %>
-            <div>
-                <h4><%= link_to "edit #{song.title}", edit_artists_album_song_path(album, current_user,song) %></h4>
-                <p><%= song.content %></p>
-                <p><%= button_to 'Delete Song',  song,  method: :delete %><p>
-            <div><br/>
+                <% if song.valid? %>
+                    <div>
+                        <h4><%= link_to "edit #{song.title}", edit_album_song_path(album, song) %></h4>
+                        <p><%= button_to 'Delete Song',  song,  method: :delete %><p>
+                    <div><br/>
+                <% end %>
             <% end %>
         <% end %>
         <h4>songs</h4>

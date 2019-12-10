@@ -9,14 +9,14 @@
     </div>
     <div class="form-group">
         <%= f.label :lyrics %><br/>
-        <%= f.text_area  :lyrics, class: "form-control" %><br/ ><br/>
+        <%= f.text_area  :lyrics, class: "form-control", rows: "30" %><br/ ><br/>
     </div>
     <div class="form-group">
         <%= f.label :genre %><br/>
-        <%= f.text_area  :genre, class: "form-control" %><br/ ><br/>
+        <%= f.text_field  :genre, class: "form-control" %><br/ ><br/>
     </div>
 
 
-    <%= f.submit "Update Song", class: "btn btn-primary btn-lg" %><br/>
+    <%= f.submit "Update Song", class: "btn btn-primary btn-lg"%><br/>
     
 <% end %>

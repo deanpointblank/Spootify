@@ -9,14 +9,18 @@
                 <p>Released: <%= @album.release_year %></p>
                 <p>label: <%= @album.label %></p>
                 <p><%= @album.songs.count %> tracks</p>
-                <% if !current_user.artists.include?(@album.artist) %>
-                    <%= form_tag followers_path(artist_id: @album.artist), method: :post do |f| %>
-                        <%= submit_tag "Follow", class: "btn btn-primary btn-lg" %>
+                <% if current_user != @album.artist %>
+                    <% if !current_user.artists.include?(@album.artist) %>
+                        <%= form_tag followers_path(artist_id: @album.artist), method: :post do |f| %>
+                            <%= submit_tag "Follow", class: "btn btn-primary btn-lg" %>
+                        <% end %>
+                    <% else %>
+                        <%= form_tag follower_path(artist_id: @album.artist), method: :delete do |f| %>
+                            <%= submit_tag "unfollow", class: "btn btn-primary btn-lg" %>
+                        <% end %>
                     <% end %>
                 <% else %>
-                    <%= form_tag follower_path(artist_id: @album.artist), method: :delete do |f| %>
-                        <%= submit_tag "unfollow", class: "btn btn-primary btn-lg" %>
-                    <% end %>
+                    <%= link_to "Edit #{@album.title}", edit_artists_album_path(@album)%>
                 <% end %>
             </div>
         </div>
@@ -24,6 +28,6 @@
 </div>
 <ul class="list-group list-group-flush">
     <% @album.songs.each do |song| %>
-        <li class="list-group-item"><%= link_to song.title, artists_album_song_path(@album, song)%></li>
+        <li class="list-group-item"><%= link_to song.title, edit_album_song_path(@album, song)%></li>
     <% end %>
 </ul>
