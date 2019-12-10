@@ -4,7 +4,7 @@
             <img src="<%= album.album_art %>" class="card-img-top" alt="<%= album.title %>">
             <div class="card-body">
                 <h5 class="card-title"><%=  link_to "#{album.title}", album %></h5>
-                <p class="card-text"><%= link_to "#{album.artist.username}", album.artist %></p>
+                <p class="card-text"><%= link_to "#{album.artist.username}", artists_user_url(album.artist) %></p>
             </div>
         </div>
     <% end %>

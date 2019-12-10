@@ -9,11 +9,14 @@
                 <p>Released: <%= @album.release_year %></p>
                 <p>label: <%= @album.label %></p>
                 <p><%= @album.songs.count %> tracks</p>
-                <%= form_tag followers_path(artist_id: @album.artist), method: :post do |f| %>
-                    <%= submit_tag "Follow", class: "btn btn-primary btn-lg" %>
-                <% end %>
-                <%= form_tag followers_path(artist_id: @album.artist), method: :delete do |f| %>
-                    <%= submit_tag "unfollow", class: "btn btn-primary btn-lg" %>
+                <% if !current_user.artists.include?(@album.artist) %>
+                    <%= form_tag followers_path(artist_id: @album.artist), method: :post do |f| %>
+                        <%= submit_tag "Follow", class: "btn btn-primary btn-lg" %>
+                    <% end %>
+                <% else %>
+                    <%= form_tag follower_path(artist_id: @album.artist), method: :delete do |f| %>
+                        <%= submit_tag "unfollow", class: "btn btn-primary btn-lg" %>
+                    <% end %>
                 <% end %>
             </div>
         </div>

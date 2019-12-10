@@ -3,7 +3,6 @@ class FollowersController < ApplicationController
     def create
         @artist = User.find_by(id: params[:artist_id])
         @follow = current_user.followers.build(artist_id: params[:artist_id])
-        binding.pry
         if @follow.save
             flash[:notice] = "Your now foolowing #{@artist.username}"
             redirect_to @artist
@@ -15,7 +14,9 @@ class FollowersController < ApplicationController
     end
 
     def destroy
-        @follow = current_user.followers.find_by(params[:id])
-        @folow.destroy
+        @artist = User.find_by(id: params[:artist_id])
+        @follow = current_user.followers.find_by(artist_id: params[:artist_id])
+        @follow.destroy
+        redirect_to @artist
     end
 end

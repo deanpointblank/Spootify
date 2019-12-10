@@ -63,6 +63,7 @@ Rails.application.routes.draw do
   ########## ArtistSpecific-Rotues ##########
 
   namespace :artists do
+    resources :user, only: [:show]
     resources :libraries, only: [:show]
     resources :albums do
       resources :songs
