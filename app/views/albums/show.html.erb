@@ -21,9 +21,9 @@
             </div>
         </div>
     </div>
-</div
+</div>
 <ul class="list-group list-group-flush">
     <% @album.songs.each do |song| %>
-        <li class="list-group-item"><%= song.title%></li>
+        <li class="list-group-item"><%= link_to song.title, artists_album_song_path(@album, song)%></li>
     <% end %>
 </ul>

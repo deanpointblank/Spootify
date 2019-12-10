@@ -8,6 +8,10 @@ class SongsController < ApplicationController
         @song = song.new
     end
 
+    def show
+        @song = Song.find_by(id: params[:id])
+    end
+
     def create  
         @song = Song.new(song_params)
         if @song.save

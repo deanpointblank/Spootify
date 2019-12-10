@@ -1,0 +1,35 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <img src="<%= @song.album.album_art %>"alt="<%= @song.title %>" style= "height: 20em ">
+            </div>
+            <div class="col-md-7">
+                <h1 class="display-4"><%= @song.title %></h1>
+                <p><%= @song.album.artist.username %></p>
+                <p>Released: <%= @song.album.release_year %></p>
+                <p>label: <%= @song.album.label %></p>
+                <% if current_user != @song.album.artist %>
+                    <% if !current_user.artists.include?(@song.album.artist) %>
+                        <%= form_tag followers_path(artist_id: @song.album.artist), method: :post do |f| %>
+                            <%= submit_tag "Follow", class: "btn btn-primary btn-lg" %>
+                        <% end %>
+                    <% else %>
+                        <%= form_tag follower_path(artist_id: @song.album.artist), method: :delete do |f| %>
+                            <%= submit_tag "unfollow", class: "btn btn-primary btn-lg" %>
+                        <% end %>
+                    <% end %>
+                <% else %>
+                    <%= link_to "Edit #{@song.title}", edit_album_song_path(@song.album, @song)%>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
+<ul class="list-group list-group-flush">
+    <% if !!@song.lyrics %>
+        <% @song.lyrics.split(/$/).each do |line|  %>
+            <li class="list-group-item"><%= line %></li>
+        <% end %>
+    <% end %>
+</ul>
