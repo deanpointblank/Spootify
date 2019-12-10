@@ -43,6 +43,8 @@ gem 'thin'
 # style and holyshit jquery was never installed
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
+# JQUERY DOESNT WORK?
+gem'jquery'
 
   # dynamic forms
   gem 'cocoon'

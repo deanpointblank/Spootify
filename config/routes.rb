@@ -40,8 +40,8 @@ Rails.application.routes.draw do
       get :liked_songs, to: 'libraries#liked_songs'
     end
 
-    ###############  Followers-Routes
-    resources :followers, only: [:create, :destroy]
+    ###############  Followers-Routes #######
+    resources :followers, only: [:new, :create, :destroy]
   
   ########### Library-Routes ##############
   resources :libraries, only: [:index, :show] do
