@@ -1,3 +1,20 @@
+<% if @user_followed.present? %>
+    <h3>Artist you followed<h3>
+    <section class="card-columns" >
+        <% @user_followed.each do |artist| %>
+            <% artist.albums_made.each do |album| %>
+                <div class="card">
+                    <img src="<%= album.album_art %>" class="card-img-top" alt="<%= album.title %>">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=  link_to "#{album.title}", album %></h5>
+                        <p class="card-text"><%= link_to "#{album.artist.username}", artists_user_url(album.artist) %></p>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+    </section>
+<% end %>
+<h3>Browse these artist<h3>
 <section class="card-columns" >
     <% @all_albums.each do |album| %>
         <div class="card">

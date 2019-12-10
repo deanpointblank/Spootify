@@ -8,6 +8,7 @@ class LibrariesController < ApplicationController
     def show
         @all_albums = Album.all
         @all_podcast = Show.all
+        @user_followed = current_user.followers.collect {|follow| User.find_by(id: follow.artist_id)}
         # @recently_played = current_user.recent
         # new user suggestions
         # similar to recent artists
