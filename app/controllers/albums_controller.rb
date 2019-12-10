@@ -14,9 +14,12 @@ class AlbumsController < ApplicationController
         params[:album][:songs_attributes].each do |tracklist, song|
             new_song = Song.new(title: song["title"], content: song["title"], lyrics: song["lyrics"])
             new_song.album =  @album
-            new_song.save
+            if new_song.valid?
+                new_song.save
+            end
         end
-        if @album.save
+        if @album.valid?
+            @album.save
             redirect_to artists_albums_path
         else
             render 'new'
