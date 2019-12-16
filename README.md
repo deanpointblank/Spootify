@@ -4,12 +4,13 @@ This App is called Spootify. It operates as an library to listen to and keep tra
 
 Installation:
 
-    To install open up the root directory, and enter "Bundle install" in the comand line.
+    To install open up the root directory, and enter "Bundle install" in the command line.
+    Populate the library. Run 'Rails db:seed'
 
 
 Contribution:
     
-    so far the application is still under development so until an official alpha is produced there are no contribution currently being accepted.
+    so far the application is still under development so until an official alpha is produced there are no contributions currently being accepted.
 
 
 License under MIT:
