@@ -27,7 +27,13 @@
     </div>
 </div>
 <ul class="list-group list-group-flush">
-    <% @album.songs.each do |song| %>
-        <li class="list-group-item"><%= link_to song.title, edit_album_song_path(@album, song)%></li>
+    <% if current_user == @album.artist %>
+        <% @album.songs.each do |song| %>
+            <li class="list-group-item"><%= link_to song.title, edit_album_song_path(@album, song)%></li>
+        <% end %>
+    <% else %>
+        <% @album.songs.each do |song| %>
+            <li class="list-group-item"><%= link_to song.title, artists_album_song_path(@album, song)%></li>
+        <% end %>
     <% end %>
 </ul>

@@ -976,3 +976,288 @@ new_artist = User.new(email: "JCole@fake.com", password: "password", username: "
                     new_song.save
             new_song = new_album.songs.build(title: "Note to Self")
                     new_song.save
+
+
+new_artist = User.new(email: "thundercat@fake.com", password: "password", username: "Thundercat", artist: true)
+        new_artist.save
+        new_album = new_artist.albums_made.build(title: "Drunk", release_year: 2017, label: "Brainfeeder", album_art: "https://t2.genius.com/unsafe/911x0/https%3A%2F%2Fimages.genius.com%2F466b18a3762737c2a3454406b02f22d4.1000x1000x1.jpg")
+                new_album.save
+                new_song = new_album.songs.build(title: "Rabbot Ho")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Captain Stupido")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Uh Uh")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Bus in These Streets")
+                        new_song.save
+                new_song = new_album.songs.build(title: "A Fan’s Mail (Tron Song Suite II)")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Lava Lamp")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Jethro")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Day & Night")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Show You the Way")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Walk on By")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Blackkk")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Tokyo")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Jameel’s Space Ride")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Friend Zone")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Them Changes")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Where I’m Going")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Drink Dat")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Inferno")
+                        new_song.save
+                new_song = new_album.songs.build(title: "I Am Crazy")
+                        new_song.save
+                new_song = new_album.songs.build(title: "3AM")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Drunk")
+                        new_song.save
+                new_song = new_album.songs.build(title: "The Turn Down")
+                        new_song.save
+                new_song = new_album.songs.build(title: "DUI")
+                        new_song.save
+
+        new_album = new_artist.albums_made.build(title: "The Beyond / Where the Giants Roam", release_year: 2015, label: "Brainfeeder", album_art: "https://t2.genius.com/unsafe/911x0/https%3A%2F%2Fimages.genius.com%2F9738332e780112be7a1a9b45e1e47413.1000x1000x1.jpg")
+                new_album.save
+                new_song = new_album.songs.build(title: "Hard Times")
+                new_song.save
+                new_song = new_album.songs.build(title: "Song for the Dead")
+                new_song.save
+                new_song = new_album.songs.build(title: "Them Changes")
+                new_song.save
+                new_song = new_album.songs.build(title: "Lone Wolf and Cub")
+                new_song.save
+                new_song = new_album.songs.build(title: "That Moment")
+                new_song.save
+                new_song = new_album.songs.build(title: "Where the Giants Roam / Field of the Nephilim")
+                new_song.save
+
+        new_album = new_artist.albums_made.build(title: "Apocalypse", release_year: 2013, label: "Brainfeeder", album_art: "https://t2.genius.com/unsafe/300x0/https%3A%2F%2Fimages.genius.com%2Ff9987b2985c3791d1ed6bafb4230f67c.999x999x1.png")
+                new_album.save
+                new_song = new_album.songs.build(title: "Tenfold")
+                new_song.save
+                new_song = new_album.songs.build(title: "Heartbreaks + Setbacks")
+                new_song.save
+                new_song = new_album.songs.build(title: "The Life Aquatic")
+                new_song.save
+                new_song = new_album.songs.build(title: "Special Stage")
+                new_song.save
+                new_song = new_album.songs.build(title: "Tron Song")
+                new_song.save
+                new_song = new_album.songs.build(title: "Seven")
+                new_song.save
+                new_song = new_album.songs.build(title: "Oh Sheit It’s X")
+                new_song.save
+                new_song = new_album.songs.build(title: "Without You")
+                new_song.save
+                new_song = new_album.songs.build(title: "Lotus and the Jondy")
+                new_song.save
+                new_song = new_album.songs.build(title: "Evangelion")
+                new_song.save
+                new_song = new_album.songs.build(title: "We’ll Die")
+                new_song.save
+                new_song = new_album.songs.build(title: "A Message For Austin / Praise The Lord / Enter The Void")
+                new_song.save
+
+                
+
+new_artist = User.new(email: "KeroKeroBonito@fake.com", password: "password", username: "Kero Kero Bonito", artist: true)
+        new_artist.save
+        new_album = new_artist.albums_made.build(title: "Civilisation I", release_year: 2019, label: "Double Denim" , album_art: "https://t2.genius.com/unsafe/300x0/https%3A%2F%2Fimages.genius.com%2F0c661320ce2df1933b32273e279e8eaa.640x640x1.jpg")
+                new_album.save
+                new_song = new_album.songs.build(title: "Battle Lines")
+                        new_song.save
+                new_song = new_album.songs.build(title: "When the Fires Come")
+                        new_song.save
+                new_song = new_album.songs.build(title: "The River")
+                        new_song.save
+
+        new_album = new_artist.albums_made.build(title: "Time 'n' Place", release_year: 2018, label: "Double Denim" , album_art: "https://t2.genius.com/unsafe/300x0/https%3A%2F%2Fimages.genius.com%2F093bed26f5658c31860b37da5b2ac25e.1000x1000x1.jpg")
+                new_album.save
+                new_song = new_album.songs.build(title: "Outside")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Time Today")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Only Acting")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Flyway")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Dump")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Make Believe")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Dear Future Self")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Visiting Hours")
+                        new_song.save
+                new_song = new_album.songs.build(title: "If I’d Known")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Sometimes")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Swimming")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Rest Stop")
+                        new_song.save
+
+
+        new_album = new_artist.albums_made.build(title: "Bonito Generation", release_year: 2016, label: "Double Denim" , album_art: "https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F77e9525f23fce9612fe72d2cb43f2b34.1000x1000x1.jpg")
+                new_album.save
+                new_song = new_album.songs.build(title: "Waking Up")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Heard a Song")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Graduation")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Fish Bowl")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Big City")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Break")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Lipslap")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Try Me")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Paintbrush")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Trampoline")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Picture This")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Hey Parents")
+                        new_song.save
+
+new_artist = User.new(email: "TaylorSwift@fake.com", password: "password", username: "Taylor Swift", artist: true)
+        new_artist.save
+        new_album = new_artist.albums_made.build(title: "Lover", release_year: 2019, label: "Republic Records", album_art: "https://t2.genius.com/unsafe/911x0/https%3A%2F%2Fimages.genius.com%2F960edcb36156c3aed9cb70ede250780a.1000x1000x1.jpg")
+        new_album.save
+                new_song = new_album.songs.build(title: "I Forgot That You Existed")
+                new_song.save
+                new_song = new_album.songs.build(title: "Cruel Summer")
+                new_song.save
+                new_song = new_album.songs.build(title: "Lover")
+                new_song.save
+                new_song = new_album.songs.build(title: "The Man")
+                new_song.save
+                new_song = new_album.songs.build(title: "The Archer")
+                new_song.save
+                new_song = new_album.songs.build(title: "I Think He Knows")
+                new_song.save
+                new_song = new_album.songs.build(title: "Miss Americana & The Heartbreak Prince")
+                new_song.save
+                new_song = new_album.songs.build(title: "Paper Rings")
+                new_song.save
+                new_song = new_album.songs.build(title: "Cornelia Street")
+                new_song.save
+                new_song = new_album.songs.build(title: "Death By A Thousand Cuts")
+                new_song.save
+                new_song = new_album.songs.build(title: "London Boy")
+                new_song.save
+                new_song = new_album.songs.build(title: "Soon You’ll Get Better")
+                new_song.save
+                new_song = new_album.songs.build(title: "False God")
+                new_song.save
+                new_song = new_album.songs.build(title: "You Need To Calm Down")
+                new_song.save
+                new_song = new_album.songs.build(title: "Afterglow")
+                new_song.save
+                new_song = new_album.songs.build(title: "ME!")
+                new_song.save
+                new_song = new_album.songs.build(title: "It’s Nice To Have A Friend")
+                new_song.save
+                new_song = new_album.songs.build(title: "Daylight")
+                new_song.save
+
+
+        new_album = new_artist.albums_made.build(title: "reputation", release_year: 2017, label: "Big Machine Records", album_art: "https://t2.genius.com/unsafe/911x0/https%3A%2F%2Fimages.genius.com%2F5c8131af7d5d20f3c8f296538af74308.1000x1000x1.jpg")
+                new_album.save
+                new_song = new_album.songs.build(title: "...Ready for It?")
+                        new_song.save
+                new_song = new_album.songs.build(title: "End Game")
+                        new_song.save
+                new_song = new_album.songs.build(title: "I Did Something Bad")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Don’t Blame Me")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Delicate")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Look What You Made Me Do")
+                        new_song.save
+                new_song = new_album.songs.build(title: "So It Goes...")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Gorgeous")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Getaway Car")
+                        new_song.save
+                new_song = new_album.songs.build(title: "King of My Heart")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Dancing with Our Hands Tied")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Dress")
+                        new_song.save
+                new_song = new_album.songs.build(title: "This Is Why We Can’t Have Nice Things")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Call It What You Want")
+                        new_song.save
+                new_song = new_album.songs.build(title: "New Year’s Day")
+                        new_song.save
+
+        new_album = new_artist.albums_made.build(title: "Red", release_year: 2012, label: "Big Machine Records", album_art: "https://t2.genius.com/unsafe/300x0/https%3A%2F%2Fimages.genius.com%2Fc84af279c97927e0c3cd7df2a09f71d5.1000x1000x1.jpg")
+                new_album.save
+                new_song = new_album.songs.build(title: "State of Grace")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Red")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Treacherous")
+                        new_song.save
+                new_song = new_album.songs.build(title: "I Knew You Were Trouble")
+                        new_song.save
+                new_song = new_album.songs.build(title: "All Too Well")
+                        new_song.save
+                new_song = new_album.songs.build(title: "22")
+                        new_song.save
+                new_song = new_album.songs.build(title: "I Almost Do")
+                        new_song.save
+                new_song = new_album.songs.build(title: "We Are Never Ever Getting Back Together")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Stay Stay Stay")
+                        new_song.save
+                new_song = new_album.songs.build(title: "The Last Time")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Holy Ground")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Sad Beautiful Tragic")
+                        new_song.save
+                new_song = new_album.songs.build(title: "The Lucky One")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Everything Has Changed")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Starlight")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Begin Again")
+                        new_song.save
+                new_song = new_album.songs.build(title: "The Moment I Knew")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Come Back... Be Here")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Girl at Home")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Treacherous (Original Demo Recording)")
+                        new_song.save
+                new_song = new_album.songs.build(title: "Red (Original Demo Recording)")
+                        new_song.save
+                new_song = new_album.songs.build(title: "State of Grace (Acoustic Version)")
+                        new_song.save
+

@@ -1,11 +1,4 @@
 <nav>
-<% if !current_user %>
-    <%= link_to "Sign up", new_user_registration_path %>
-    <%= link_to "Log in", new_user_session_path %>
-<% end %>
-</nav>
-
-<nav>
         <nav class="sidebar">
             <ul class="nav nav-sidebar">
             <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link" %></li>
@@ -37,6 +30,10 @@
 
                     <li class="nav-item"><%= link_to "Administrator Panel", '#', class: "nav-link" %> </li>
 
+            <% end %>
+            <% if !current_user %>
+                <li class="nav-item"><%= link_to "Sign up", new_user_registration_path, class: "nav-link" %></li>
+                <li class="nav-item"><%= link_to "Log in", new_user_session_path, class: "nav-link" %></li>
             <% end %>
             </ul>
         <% if !!current_user %>
