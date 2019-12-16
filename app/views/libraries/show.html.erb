@@ -1,10 +1,10 @@
 <section class="card-columns" >
-    <% if !!@songs %>
+    <% if @songs != nil %>
         <% @songs.each do |song| %>
             <div class="card">
                 <img src="<%= song.album.album_art %>" class="card-img-top" alt="<%= song.title %>">
                 <div class="card-body">
-                    <h5 class="card-title"><%=  link_to "#{song.title}", song %></h5>
+                    <h5 class="card-title"><%=  link_to "#{song.title}", artists_album_song_path(song.album, song)%></h5>
                 </div>
             </div>
         <% end %>

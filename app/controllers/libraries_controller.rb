@@ -36,14 +36,14 @@ class LibrariesController < ApplicationController
     end
 
     def hip_hop
-        @song = Song.hip_hop
+        @songs = Song.hip_hop
         @all_albums = Album.all
         @user_followed = current_user.followers.collect {|follow| User.find_by(id: follow.artist_id)}
         render :show
     end
 
     def r_b
-        @song = Song.rb
+        @songs = Song.rb
         @all_albums = Album.all
         @user_followed = current_user.followers.collect {|follow| User.find_by(id: follow.artist_id)}
         render :show
