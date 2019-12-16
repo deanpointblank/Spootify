@@ -28,5 +28,25 @@ class LibrariesController < ApplicationController
         @liked_songs = current_user.liked_songs
     end
 
+    def pop
+        @songs = Song.pop
+        @all_albums = Album.all
+        @user_followed = current_user.followers.collect {|follow| User.find_by(id: follow.artist_id)}
+        render :show
+    end
+
+    def hip_hop
+        @song = Song.hip_hop
+        @all_albums = Album.all
+        @user_followed = current_user.followers.collect {|follow| User.find_by(id: follow.artist_id)}
+        render :show
+    end
+
+    def r_b
+        @song = Song.rb
+        @all_albums = Album.all
+        @user_followed = current_user.followers.collect {|follow| User.find_by(id: follow.artist_id)}
+        render :show
+    end
 
 end

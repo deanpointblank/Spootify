@@ -1,3 +1,16 @@
+<section class="card-columns" >
+    <% if !!@songs %>
+        <% @songs.each do |song| %>
+            <div class="card">
+                <img src="<%= song.album.album_art %>" class="card-img-top" alt="<%= song.title %>">
+                <div class="card-body">
+                    <h5 class="card-title"><%=  link_to "#{song.title}", song %></h5>
+                </div>
+            </div>
+        <% end %>
+    <% end %>
+</section>
+
 <% if @user_followed.present? %>
     <h3>Artist you followed<h3>
     <section class="card-columns" >
@@ -14,6 +27,30 @@
         <% end %>
     </section>
 <% end %>
+
+<h3>Browse By Gernre<h3>
+<section class="card-columns" >
+        <div class="card">
+            <img src="https://cdn1.theyoungfolks.com/wp-content/uploads/2017/08/30225855/michael-jackson-bad-770x770.jpg" class="card-img-top" alt="pop">
+            <div class="card-body">
+                <h5 class="card-title"><%= link_to "Pop", pop_path %></h5>
+
+            </div>
+        </div>
+        <div class="card">
+            <img src="http://images.genius.com/ccc0894094b9a3cbb47a45ec0c69b1f0.1000x1000x1.jpg" class="card-img-top" alt="R&B">
+            <div class="card-body">
+                <h5 class="card-title"><%= link_to "R&B", r_b_path %></h5>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/81oJg8R1C4L._SL1500_.jpg" class="card-img-top" alt="Hip-hop">
+            <div class="card-body">
+                <h5 class="card-title"><%= link_to "Hip-Hop", hip_hop_path %></h5>
+            </div>
+        </div>
+</section>
+
 <h3>Browse these artist<h3>
 <section class="card-columns" >
     <% @all_albums.each do |album| %>

@@ -26,6 +26,11 @@ Rails.application.routes.draw do
   resources :albums, only: [:show, :create, :update, :destroy]
   resources :songs, only: [:create, :update, :destroy]
 
+  ############## Genre-Specific ###########
+
+  get :pop, to: 'libraries#pop'
+  get :hip_hop, to: 'libraries#hip_hop'
+  get :r_b, to: 'libraries#r_b'
 
   ############ User-Routes ################
   
