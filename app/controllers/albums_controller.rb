@@ -31,6 +31,8 @@ class AlbumsController < ApplicationController
 
     def show
         @album = Album.find_by(id: params[:id])
+        @follow = current_user.followers.find_by(artist_id: @album.artist)
+
     end
 
     def edit

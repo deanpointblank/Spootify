@@ -19,4 +19,14 @@ class FollowersController < ApplicationController
         @follow.destroy
         redirect_to @artist
     end
+
+    def update
+        @artist = User.find_by(id: params[:artist_id])
+        @follow = current_user.followers.find_by(artist_id: params[:artist_id])
+        if @follow.update(rating: params[:rating].to_i)
+            redirect_to @artist
+        else
+            redirect_to @artist
+        end
+    end
 end

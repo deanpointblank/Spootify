@@ -46,7 +46,7 @@ Rails.application.routes.draw do
     end
 
     ###############  Followers-Routes #######
-    resources :followers, only: [:new, :create, :destroy]
+    resources :followers, only: [:create, :destroy, :update]
   
   ########### Library-Routes ##############
   resources :libraries, only: [:index, :show] do

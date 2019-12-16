@@ -9,6 +9,9 @@
                 <p>Released: <%= @album.release_year %></p>
                 <p>label: <%= @album.label %></p>
                 <p><%= @album.songs.count %> tracks</p>
+                <% if @follow.rating.present? %>
+                    <p>You gave this Artist a <%= @follow.rating %> out of 5</p>
+                <% end %>
                 <% if current_user != @album.artist %>
                     <% if !current_user.artists.include?(@album.artist) %>
                         <%= form_tag followers_path(artist_id: @album.artist), method: :post do |f| %>
@@ -17,6 +20,22 @@
                     <% else %>
                         <%= form_tag follower_path(artist_id: @album.artist), method: :delete do |f| %>
                             <%= submit_tag "unfollow", class: "btn btn-primary btn-lg" %>
+                        <% end %>
+                        <br/>
+                        <%= form_tag follower_path(artist_id: @album.artist), method: :PATCH do |f| %>
+                        
+                            <%= label :rating, '1' %>
+                            <%= radio_button_tag(:rating, 1, checked = false) %>
+                            <%= label :rating, '2' %>
+                            <%= radio_button_tag(:rating, 2, checked = false) %>
+                            <%= label :rating, '3' %>
+                            <%= radio_button_tag(:rating, 3, checked = false) %>
+                            <%= label :rating, '4' %>
+                            <%= radio_button_tag(:rating, 4, checked = false) %>
+                            <%= label :rating, '5' %>
+                            <%= radio_button_tag(:rating, 5, checked = false) %>
+                            
+                            <%= submit_tag "rate", class: "btn btn-info btn-lg" %>
                         <% end %>
                     <% end %>
                 <% else %>
